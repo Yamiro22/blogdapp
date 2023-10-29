@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Navbar />
+
+    <!-- Main content goes here -->
+    <div class="main-content">
+      <!-- Example usage of ProjectCard -->
+      <ProjectCard :project="sampleProject" />
+      <!-- You can replicate the above line for multiple projects -->
+    </div>
+
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
+import ProjectCard from './components/ProjectCard.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Footer,
+    ProjectCard
+  },
+  data() {
+    return {
+      sampleProject: {
+        image: 'path/to/image.jpg',
+        title: 'Sample Project',
+        description: 'A brief description of the sample project.',
+        link: 'https://link-to-project.com'
+      }
+    };
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* Global styles can be added here */
+.main-content {
+  padding: 20px;
 }
 </style>
