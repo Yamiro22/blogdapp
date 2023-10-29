@@ -28,9 +28,9 @@ export default {
   data() {
     return {
       sampleProject: {
-        image: 'path/to/image.jpg',
-        title: 'Sample Project',
-        description: 'A brief description of the sample project.',
+        image: './assets/images/Screenshot from 2023-10-29 22-09-13.jpg',
+        title: 'Dapp blog',
+        description: 'A decentralized application (dApp) is a software application that runs on a decentralized network, such as a blockchain. dApps are designed to be more secure, transparent, and resistant to censorship than traditional applications. They are built using smart contracts, which are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code 1..',
         link: 'https://link-to-project.com'
       }
     };
