@@ -5,8 +5,8 @@
     <!-- Main content goes here -->
     <div class="main-content">
       <!-- Example usage of ProjectCard -->
-      <ProjectCard :project="sampleProject" />
-      <!-- You can replicate the above line for multiple projects -->
+      <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
+      <!-- Now you can easily add multiple projects by extending the projects array -->
     </div>
 
     <Footer />
@@ -27,20 +27,24 @@ export default {
   },
   data() {
     return {
-      sampleProject: {
-        image: './assets/images/Screenshot from 2023-10-29 22-09-13.jpg',
-        title: 'Dapp blog',
-        description: 'A decentralized application (dApp) is a software application that runs on a decentralized network, such as a blockchain. dApps are designed to be more secure, transparent, and resistant to censorship than traditional applications. They are built using smart contracts, which are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code 1..',
-        link: 'https://link-to-project.com'
-      }
+      projects: [
+        {
+          image: 'https://www.codingfont.com/blog/media/posts/13/best2023Cover-12.png',
+          title: 'portfolio website',
+          description: 'A portfolio website is a platform that showcases your work and lets others know about you. It’s like an evergreen platform for your projects, case studies, and information about you.',
+          link: 'https://github.com/Yamiro22/my_portfoilo'
+        },
+        // ... Add more projects as needed
+      ]
     };
   }
 }
 </script>
 
-<style>
-/* Global styles can be added here */
+<style scoped>
+/* Scoped styles can be added here, which will only apply to this component */
 .main-content {
   padding: 20px;
 }
 </style>
+
